@@ -1,22 +1,58 @@
 .topBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #2B3445;
     color: #fff;
     height: 40px;
     text-shadow: none;
 }
+.topNavIcons{
+    margin-left: 15px
+}
 
+  .topBarSelect .MuiSelect-icon {
+    color: white;
+  }
+  
+  .topBarSelect .MuiSelect-select {
+    color: white;
+    border: none;
+  }
+  
+  .topBarSelect .MuiSelect-select:focus {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    box-shadow: none;
+  }
+  
+  .topBarSelect .MuiOutlinedInput-notchedOutline {
+    border: none;
+  }
+  
+  .topBarSelect .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border: none;
+  }
+  
+  .topBarSelect .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border: none;
+    outline: none;
+  }
 .topBarSearch{
     display: flex;
+    height: 80px;
     justify-content: space-between;
     align-items: center;
     background-color: #F6F9FC;
     color: #2B3445 ;
     box-shadow: none !important;
 }
-.topBarSearchField{
-    border-radius: 8px !important;
-    border-color: red;
-    width: 500px;
+.topBarSearchField .MuiOutlinedInput-root {
+    border-radius: 50px !important;
+    border-color: 1px solid red;
+    width: 700px;
     height: 44px;
 }
 .topBarMenuBar{
@@ -25,12 +61,39 @@
     align-items: center;
     background-color: #F6F9FC;
     color: #2B3445 ;
+    height: 60px;
     box-shadow: none !important;
 
 }
+/* .categoriesBtn{
+    width: 278px;
+    height: 40px;
+    background-color: blue;
+    
+    
+} */
 .topBarMenuBarItems{
     display: flex;
     justify-content: space-between;
     align-items: center;
 
 }
+
+.categories-select {
+    width: 280px;
+    height: 50px;
+  }
+  .my-popover {
+    width: 280px;
+    height: 200px;
+  }
+  
+  .my-list {
+    width: 280px;
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .my-list-item {
+    width: 280px;
+  }
