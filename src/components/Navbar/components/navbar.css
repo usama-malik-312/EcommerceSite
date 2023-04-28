@@ -1,0 +1,36 @@
+.topBar{
+    background: #2B3445;
+    color: #fff;
+    height: 40px;
+    text-shadow: none;
+}
+
+.topBarSearch{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F6F9FC;
+    color: #2B3445 ;
+    box-shadow: none !important;
+}
+.topBarSearchField{
+    border-radius: 8px !important;
+    border-color: red;
+    width: 500px;
+    height: 44px;
+}
+.topBarMenuBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F6F9FC;
+    color: #2B3445 ;
+    box-shadow: none !important;
+
+}
+.topBarMenuBarItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
