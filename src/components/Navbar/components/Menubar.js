@@ -9,21 +9,45 @@ import './navbar.css'
 import { Button, Menu, MenuItem, TextField } from '@mui/material';
 import Fade from '@mui/material/Fade';
 import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
-import { List, ListItem, ListItemIcon, ListItemText, Popover } from '@mui/material';
+import { List, ListItem, ListItemIcon, ListItemText, Popover, Select } from '@mui/material';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { useNavigate  } from 'react-router-dom';
 
 
-const categories = [
+const categories = [ 
     { name: 'Category 1', value: 'category-1' },
     { name: 'Category 2', value: 'category-2' },
     { name: 'Category 3', value: 'category-3' },
   ];
 
+  const pages = [
+    { label: 'Page 1', value: 'page1' },
+    { label: 'Page 2', value: 'page2' },
+    { label: 'Page 3', value: 'page3' },
+  ];
   
 export default function ManuBar() {
 
+    //  const navigate  = useNavigate();
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedValue, setSelectedValue] = useState('');
     const open = Boolean(anchorEl);
+    const [selectedPage, setSelectedPage] = useState('page1');
+
+
+
+    const handlePageChange = (event) => {
+      setSelectedPage(event.target.value);
+      // navigate(`/`);
+    };
+  
+    const handleMenuOpen = (event) => {
+      event.preventDefault();
+    };
+  
+
+
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
@@ -49,8 +73,8 @@ export default function ManuBar() {
             style={{width:"278px"}}
             size="large" 
             onClick={handleClick}
-            startIcon={<ListOutlinedIcon sx={{mr:2}} />}
-            endIcon={<ListOutlinedIcon />}
+            startIcon={<ListOutlinedIcon fontSize='large'  />}
+            endIcon={anchorEl ? <KeyboardArrowUpIcon sx={{ml:5}} />: <KeyboardArrowDownIcon sx={{ml:5}} />  }
         >
         {selectedValue || 'Select an option'}
       </Button>
@@ -84,7 +108,105 @@ export default function ManuBar() {
       </Popover>
       </div>
       <div className="topBarMenuBarItems">
-          <Typography variant="h6" color="inherit" component="div">
+      <Select
+          value={selectedPage}
+          label="pages"
+          onChange={handlePageChange}
+          onMouseOver={handleMenuOpen}
+          className="menuBarSelect"
+          sx={{ '& .MuiSelect-menu': { marginTop: '40px' } }}
+          MenuProps={{ onMouseLeave: handleMenuOpen }}
+        >
+          {pages.map((page) => (
+            <MenuItem key={page.value} value={page.value}>
+              {page.label}
+            </MenuItem>
+          ))}
+        </Select>
+
+        <Select
+          value={selectedPage}
+          label="pages"
+          onChange={handlePageChange}
+          onMouseOver={handleMenuOpen}
+          className="menuBarSelect"
+          sx={{ '& .MuiSelect-menu': { marginTop: '40px' } }}
+          MenuProps={{ onMouseLeave: handleMenuOpen }}
+        >
+          {pages.map((page) => (
+            <MenuItem key={page.value} value={page.value}>
+              {page.label}
+            </MenuItem>
+          ))}
+        </Select> 
+        
+          <Select
+          value={selectedPage}
+          label="pages"
+          onChange={handlePageChange}
+          onMouseOver={handleMenuOpen}
+          className="menuBarSelect"
+          sx={{ '& .MuiSelect-menu': { marginTop: '40px' } }}
+          MenuProps={{ onMouseLeave: handleMenuOpen }}
+        >
+          {pages.map((page) => (
+            <MenuItem key={page.value} value={page.value}>
+              {page.label}
+            </MenuItem>
+          ))}
+        </Select>
+
+
+        <Select
+          value={selectedPage}
+          label="pages"
+          onChange={handlePageChange}
+          onMouseOver={handleMenuOpen}
+          className="menuBarSelect"
+          sx={{ '& .MuiSelect-menu': { marginTop: '40px' } }}
+          MenuProps={{ onMouseLeave: handleMenuOpen }}
+        >
+          {pages.map((page) => (
+            <MenuItem key={page.value} value={page.value}>
+              {page.label}
+            </MenuItem>
+          ))}
+        </Select>
+
+        <Select
+          value={selectedPage}
+          label="pages"
+          onChange={handlePageChange}
+          onMouseOver={handleMenuOpen}
+          className="menuBarSelect"
+          sx={{ '& .MuiSelect-menu': { marginTop: '40px' } }}
+          MenuProps={{ onMouseLeave: handleMenuOpen }}
+        >
+          {pages.map((page) => (
+            <MenuItem key={page.value} value={page.value}>
+              {page.label}
+            </MenuItem>
+          ))}
+        </Select>
+
+        <Select
+          value={selectedPage}
+          label="pages"
+          onChange={handlePageChange}
+          onMouseOver={handleMenuOpen}
+          className="menuBarSelect"
+          sx={{ '& .MuiSelect-menu': { marginTop: '40px' } }}
+          MenuProps={{ onMouseLeave: handleMenuOpen }}
+        >
+          {pages.map((page) => (
+            <MenuItem key={page.value} value={page.value}>
+              {page.label}
+            </MenuItem>
+          ))}
+        </Select>
+
+
+          {/* <Typography variant="h6" color="inherit" component="div">
             Photos
           </Typography>
           <Typography variant="h6" color="inherit" component="div">
@@ -99,7 +221,7 @@ export default function ManuBar() {
             Photos
           </Typography>       <Typography variant="h6" color="inherit" component="div">
             Photos
-          </Typography>
+          </Typography> */}
           </div>
         </Toolbar>
       </AppBar>

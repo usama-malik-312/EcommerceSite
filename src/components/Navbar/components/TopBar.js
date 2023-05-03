@@ -78,12 +78,15 @@ export default function DenseAppBar() {
             cartMate
           </Typography>
           </div>
-          <TextField  className="topBarSearchField" placeholder='Search...' variant="outlined" style={{borderRadius:"50%"}}/>
+          <TextField  className="topBarSearchField" placeholder='Search...' variant="outlined" />
+          <div>
           <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <AccountCircleOutlinedIcon sx={{ mr: 2 }}  />
+            <AccountCircleOutlinedIcon />
+          </IconButton>
+          <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
             <LocalMallOutlinedIcon />
           </IconButton>
-          
+          </div>
         </Toolbar>
         <ManuBar/>
         {/* <Toolbar  className="topBarMenuBar">
